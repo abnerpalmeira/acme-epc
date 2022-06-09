@@ -1,0 +1,47 @@
+{
+    "regex":"^([a-zA-Z]+)=(((MO|WE|FR|T[HU]|S[AU])(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]-(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9](,|$))+)$",
+    "rates":{
+        "MO":[
+            {"start_time": 0, "end_time": 1, "value": 20, "currency": "USD"},
+            {"start_time": 1, "end_time": 540, "value": 25, "currency": "USD"},
+            {"start_time": 541, "end_time": 1080, "value": 15, "currency": "USD"},
+            {"start_time": 1081, "end_time": 1439, "value": 20, "currency": "USD"}
+        ],
+        "TU": [
+            {"start_time": 0, "end_time": 1, "value": 20, "currency": "USD"},
+            {"start_time": 1, "end_time": 540, "value": 25, "currency": "USD"},
+            {"start_time": 541, "end_time": 1080, "value": 15, "currency": "USD"},
+            {"start_time": 1081, "end_time": 1439, "value": 20, "currency": "USD"}
+        ],
+        "WE":[
+            {"start_time": 0, "end_time": 1, "value": 20, "currency": "USD"},
+            {"start_time": 1, "end_time": 540, "value": 25, "currency": "USD"},
+            {"start_time": 541, "end_time": 1080, "value": 15, "currency": "USD"},
+            {"start_time": 1081, "end_time": 1439, "value": 20, "currency": "USD"}
+        ],
+        "TH":[
+            {"start_time": 0, "end_time": 1, "value": 20, "currency": "USD"},
+            {"start_time": 1, "end_time": 540, "value": 25, "currency": "USD"},
+            {"start_time": 541, "end_time": 1080, "value": 15, "currency": "USD"},
+            {"start_time": 1081, "end_time": 1439, "value": 20, "currency": "USD"}
+        ],
+        "FR":[
+            {"start_time": 0, "end_time": 1, "value": 20, "currency": "USD"},
+            {"start_time": 1, "end_time": 540, "value": 25, "currency": "USD"},
+            {"start_time": 541, "end_time": 1080, "value": 15, "currency": "USD"},
+            {"start_time": 1081, "end_time": 1439, "value": 20, "currency": "USD"}
+        ],
+        "SA":[
+            {"start_time": 0, "end_time": 1, "value": 25, "currency": "USD"},
+            {"start_time": 1, "end_time": 540, "value": 30, "currency": "USD"},
+            {"start_time": 541, "end_time": 1080, "value": 20, "currency": "USD"},
+            {"start_time": 1081, "end_time": 1439, "value": 25, "currency": "USD"}
+        ],
+        "SU":[
+            {"start_time": 0, "end_time": 1, "value": 25, "currency": "USD"},
+            {"start_time": 1, "end_time": 540, "value": 30, "currency": "USD"},
+            {"start_time": 541, "end_time": 1080, "value": 20, "currency": "USD"},
+            {"start_time": 1081, "end_time": 1439, "value": 25, "currency": "USD"}
+        ]
+    }
+}
