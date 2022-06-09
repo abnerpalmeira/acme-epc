@@ -22,7 +22,7 @@ class InputHandler:
         for idx,line in enumerate(input):
             match = r.match(line)         
             if match:
-                worked_hours = []
+                worked_minutes = []
                 name = match.groups()[0]
                 worked_hours_string = match.groups()[1]
                 for entry in worked_hours_string.split(","):
@@ -33,7 +33,7 @@ class InputHandler:
                     #Check if starting interval is greater than ending
                     if foo[1] > foo[2]:
                         raise ValidationError("Invalid input starting hour is greater than ending hour.")
-                    worked_hours.append(foo)
-                employees.append(Employee(name,worked_hours))
+                    worked_minutes.append(foo)
+                employees.append(Employee(name,worked_minutes))
             else:
                 raise ValidationError(f"Line {idx+1} of input is invalid.")
