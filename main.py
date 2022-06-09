@@ -8,7 +8,9 @@ with open('input.txt', 'r') as f:
     for idx,line in enumerate(lines):
         match = r.match(line)
         if match:
-            employees.append(Employee(match))
+            name = match.groups()[0]
+            worked_hours_string = match.groups()[1]
+            employees.append(Employee(name,worked_hours_string))
 
-# for e in employees:
-#     print(e)
+for e in employees:
+    print(e.worked_hours)
