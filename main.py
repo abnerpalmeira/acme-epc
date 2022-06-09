@@ -1,8 +1,14 @@
 import re
+from employee import Employee
 
-r = re.compile("([a-zA-Z]+)=(([a-zA-Z]+(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]-(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9](,|$))+)")
+r = re.compile("^([a-zA-Z]+)=(((MO|WE|FR|T[HU]|S[AU])(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]-(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9](,|$))+)$")
+employees = []
 with open('input.txt', 'r') as f:
-    data = f.readlines()
-    for line in data:
-        x = r.match(line)
-        print(x)
+    lines = f.readlines()
+    for idx,line in enumerate(lines):
+        match = r.match(line)
+        if match:
+            employees.append(Employee(match))
+
+# for e in employees:
+#     print(e)
