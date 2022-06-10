@@ -37,7 +37,7 @@ class InputHandler:
                     # Check if starting interval is greater than ending
                     if foo[1] > foo[2]:
                         raise ValidationError(
-                            "Invalid input starting hour is greater than ending hour."
+                            f"Invalid input in Line {idx+1} the starting hour is greater than ending hour."
                         )
                     worked_minutes.append(foo)
                 employees.append(Employee(name, worked_minutes))

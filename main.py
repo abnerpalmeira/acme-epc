@@ -1,6 +1,6 @@
 import re
-from employee import Employee
 from rate import Rate
+from employee import Employee
 from utility import FileHandler, InputHandler, ValidationError
 
 
