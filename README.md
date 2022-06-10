@@ -13,7 +13,7 @@ This program allows you to calculate how much an ACME employee will receive, giv
 [NAME]=[DAY OF WEEK][STARTING HOUR]-[ENDING HOUR]
 ```
 <b>[NAME]</b> = Name of the employee.\
-<b>[DAY OF WEEK]</b> = Day of week it could be MO,TU,WE,TH,FR,SA,SU. \
+<b>[DAY OF WEEK]</b> = Day of week it could be <b>MO,TU,WE,TH,FR,SA,SU</b>. \
 <b>[STARTING HOUR]</b> = Time when the employee started working.\
 <b>[ENDING HOUR]</b> = Time when the employee stoped working. \
 When dealing with multiple employees, split it using comma.
@@ -71,14 +71,14 @@ I needed to keep the rates  table in a place that was easy to change, to allow p
 
 ### Incomplete Working Hours
 
-Because there is the possibility of an employee getting paid for an hour that he didn't work fully, I decided to work with minutes instead of hours; this also made it much easier to check for interval overlapping. Working with minutes, the logic came down to three cases: the working interval is fully contained in a current rate interval, or it's partially contained, or it isn't contained at all.
-It made the implementation easy because only two of these cases needed code.
+Because there is the possibility of an employee getting paid for an hour that he didn't work fully, I decided to work with minutes instead of hours; this also made it much easier to check for interval overlapping. Working with minutes, the logic came down to three cases: the working interval is fully contained in a current rate interval, it's partially contained, or it isn't contained at all.
+It made the implementation easy because only two of these cases need code.
 
 ### Conclusion
 Besides the above facts the rest of my approach was pretty standard, I used classes, constants and tried to keep everything organized and simple. For styling I used black. 
 
 ## Tests
-To to avoid the use of third party libraries I used unittest for testing.
+To to avoid the use of third party libraries I used <b>unittest</b> for testing.
 
 ## Future Improvements
 - Accept different currencies.
