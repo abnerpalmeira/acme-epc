@@ -7,6 +7,11 @@ class Employee:
         self.name = name
         self.__worked_minutes = worked_minutes
 
+    def calculate_working_hours_value(total_minutes, value):
+        amount = total_minutes // 60 * value * 100
+        amount += 100 * (total_minutes % 60) / 60 * value
+        return amount
+
     def calculate_payment(self, rates: Rate) -> float:
         amount = 0
         for day, start, end in self.__worked_minutes:
@@ -16,12 +21,14 @@ class Employee:
                 value = r["value"]
                 if rate_start_time <= start and end <= rate_end_time:
                     total_minutes = end - start
-                    amount += total_minutes // 60 * value * 100
-                    amount += 100 * (total_minutes % 60) / 60 * value
+                    amount += Employee.calculate_working_hours_value(
+                        total_minutes, value
+                    )
                     break
                 elif start < rate_end_time and rate_end_time < end:
                     total_minutes = rate_end_time - start
                     start = rate_end_time + 1
-                    amount += total_minutes // 60 * value * 100
-                    amount += 100 * (total_minutes % 60) / 60 * value
+                    amount += Employee.calculate_working_hours_value(
+                        total_minutes, value
+                    )
         return amount / 100

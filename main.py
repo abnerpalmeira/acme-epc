@@ -1,13 +1,18 @@
-import re
 from rate import Rate
 from employee import Employee
-from utility import FileHandler, InputHandler, ValidationError
+from utility import (
+    FileHandler,
+    InputHandler,
+    ValidationError,
+    JSON_FILE_PATH,
+    INPUT_FILE_PATH,
+)
 
 
 if __name__ == "__main__":
     try:
-        data = FileHandler.open_file("data.json")
-        input = FileHandler.open_file("input.txt")
+        data = FileHandler.open_file(JSON_FILE_PATH)
+        input = FileHandler.open_file(INPUT_FILE_PATH)
         employees = []
         rate = Rate(data["rates"])
         InputHandler.process_input(input, employees, data["regex"])

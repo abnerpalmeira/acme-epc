@@ -2,7 +2,12 @@ import unittest
 from unittest.mock import MagicMock
 from rate import Rate
 from employee import Employee
-from utility import FileHandler, InputHandler, ValidationError
+from utility import (
+    FileHandler,
+    InputHandler,
+    ValidationError,
+    JSON_FILE_PATH,
+)
 
 
 class TestFileHandler(unittest.TestCase):
@@ -19,7 +24,7 @@ class TestInputHandler(unittest.TestCase):
         Check if the expected exception is thrown when input is not valid
         """
         input = ["RENE=MO10:00-08:00\n"]
-        data = FileHandler.open_file("data.json")
+        data = FileHandler.open_file(JSON_FILE_PATH)
         self.assertRaises(
             ValidationError, InputHandler.process_input, input, [], data["regex"]
         )
@@ -29,7 +34,7 @@ class TestInputHandler(unittest.TestCase):
         Check if the expected exception is thrown when input is not unformatted
         """
         input = ["RENE=EU07:00-08:00\n"]
-        data = FileHandler.open_file("data.json")
+        data = FileHandler.open_file(JSON_FILE_PATH)
         self.assertRaises(
             ValidationError, InputHandler.process_input, input, [], data["regex"]
         )
@@ -42,7 +47,7 @@ class TestEmployee(unittest.TestCase):
         """
         employees = []
         input = ["RENE=TU07:00-08:00\n"]
-        data = FileHandler.open_file("data.json")
+        data = FileHandler.open_file(JSON_FILE_PATH)
         rate = Rate(data["rates"])
         rate.get_by_day = MagicMock(
             return_value=[

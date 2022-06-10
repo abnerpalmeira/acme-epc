@@ -2,6 +2,9 @@ import re
 import json
 from employee import Employee
 
+JSON_FILE_PATH = "data.json"
+INPUT_FILE_PATH = "input.txt"
+
 
 class ValidationError(Exception):
     pass
