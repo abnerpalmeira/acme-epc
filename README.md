@@ -25,7 +25,7 @@ ABNER=MO18:30-18:45
 ```
 
 You can expected the following outputs:
-```python
+```
 #Valid input.
 The amount to pay ABNER is: 5.00 USD 
 
@@ -63,7 +63,7 @@ With this in mind I decided to represent the amounts as integers multiplied by 1
 
 ### Input Validation
 In order to prevent the user from entering invalid data I decided to create a validation layer, but the input was very specific and to validate in a normal way I would end up with a very long code with several ifs, to solve this I created a regex expression that recognizes only inputs in the specified format.
-```
+```regex
 ^([a-zA-Z]+)=(((MO|WE|FR|T[HU]|S[AU])(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]-(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9](,|$))+)$
 ```
 ### Hourly Rate Table
@@ -84,4 +84,3 @@ To to avoid the use of third party libraries I used unittest for testing.
 - Accept different currencies.
 - Enhance the testing class with pytest and fixtures.
 - Dockerizing the application.
-
